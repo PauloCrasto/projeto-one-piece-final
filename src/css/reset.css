@@ -1,0 +1,9 @@
+* {
+    margin: 0; /* Distanciamento zero */
+    padding: 0;
+    box-sizing: border-box; /* Mantém a largura e altura totais de maneira proporcional */
+}
+
+ul {
+    list-style: none;
+}

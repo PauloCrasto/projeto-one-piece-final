@@ -1,0 +1,101 @@
+body {
+    background-color: #000000;
+    overflow: hidden; /* Retira as sobras da barra de rolagem para ficar sem rolagem */
+}
+
+main::after {
+    content: "";
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 88vw;
+
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+
+main .personagem {
+    display: none; /* Esconde todos os elementos de .personagem */
+    height: 100vh; /* Viewport Height - faz com que ele ocupe 100% do tamanho que ele tem */
+}
+
+main .personagem.selecionado { /* Estilizando o elemento que tiver as duas classes nele, por isso o motivo do Luffy ter ficado separadamente como "personagem selecionado" */
+    display: block;
+}
+
+main .personagem .imagem {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover = cobrir a distorção do 100hv na alteração do display do personagem */
+}
+
+.conteudo {
+    /* background-color: orange; */
+    position: absolute; /* Tira o elemento do fluxo normal da página e fica por cima das demais */
+    top: 0;
+    left: 120px;
+
+    display: flex;
+    flex-direction: column; /* coloca as palavras em colunas */
+    justify-content: center; /* alinha o conteúdo verticalmente */
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1;
+}
+
+.conteudo .nome-personagem {
+    /*background-color: green;*/
+    color: #ffffff;
+    font-size: 48px;
+    font-family: "Secular One";
+    font-weight: 400;
+    margin-bottom: 20px; /* Cria espaçamento entre Monkey D. Luffy e o texto descrevendo ele */
+}
+
+.conteudo .descricao {
+    /*background-color: blue;*/
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Rubik";
+    line-height: 24px;
+}
+
+.conteudo .logo {
+    /*background-color: aquamarine;*/
+    background-image: url("../imagens/one-piece-logo.png");
+    background-size: cover;
+    height: 120px;
+    width: 230px;
+    margin-bottom: 35;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center; /* alinha ao centro*/
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.botoes .botao {
+    border: none;
+    background: #000000;
+    cursor: pointer; /* indica um item clicável*/
+    border-radius: 50%;
+}
+
+.botoes .botao img { /*existe a tag img no index.html em botoes*/
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #D9D9D9D9;
+}
